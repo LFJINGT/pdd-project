@@ -40,7 +40,8 @@
 <script>
 import mui from './../../../mui/js/mui.min'
 mui('.mui-scroll-wrapper').scroll({
-  deceleration:0.0005
+  // 阻尼
+  deceleration: 0.0005
 })
 export default {
   name: 'HomeHeader'

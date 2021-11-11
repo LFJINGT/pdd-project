@@ -24,10 +24,10 @@
 <script>
 import mui from './../../../mui/js/mui.min'
 mui('.mui-scroll-wrapper').scroll({
-  deceleration:0.0005
+  deceleration: 0.0005
 })
 export default {
-  name: "HomeFooter"
+  name: 'HomeFooter'
 }
 </script>
 

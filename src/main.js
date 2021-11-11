@@ -3,7 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 引入mui的css样式
 import './mui/css/mui.min.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// requite.styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper/* { default global options } */)
 
 Vue.config.productionTip = false
 
