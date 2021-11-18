@@ -22,6 +22,7 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
+        // 启用轮播循环
         loop: true
       },
       swiperList: [
