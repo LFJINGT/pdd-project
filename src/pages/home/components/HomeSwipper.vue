@@ -3,7 +3,7 @@
     <div class="swipper-box">
       <swiper :options="swiperOption" ref="mySwiper">
         <!-- slides -->
-        <swiper-slide v-for="item in swiperList" :key="item.id">
+        <swiper-slide v-for="item in swipperList" :key="item.id">
           <img class="swipper-img" :src="item.imgUrl" alt="">
         </swiper-slide>
         <!-- Optional controls -->
@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'HomeSwipper',
+  props: {
+    swipperList: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -25,16 +28,16 @@ export default {
         // 启用轮播循环
         loop: true
       },
-      swiperList: [
-        {
-          'id': '001',
-          'imgUrl': '//img.alicdn.com/imgextra/i1/6000000000382/O1CN01h4sNLB1Eh00G6Kmrn_!!6000000000382-0-lubanimage.jpg'
-        },
-        {
-          'id': '002',
-          'imgUrl': 'https://img.alicdn.com/simba/img/TB15tIjGVXXXXcoapXXSutbFXXX.jpg'
-        }
-      ]
+      // swiperList: [
+      //   {
+      //     'id': '001',
+      //     'imgUrl': '//img.alicdn.com/imgextra/i1/6000000000382/O1CN01h4sNLB1Eh00G6Kmrn_!!6000000000382-0-lubanimage.jpg'
+      //   },
+      //   {
+      //     'id': '002',
+      //     'imgUrl': 'https://img.alicdn.com/simba/img/TB15tIjGVXXXXcoapXXSutbFXXX.jpg'
+      //   }
+      // ],
     }
   }
 }
