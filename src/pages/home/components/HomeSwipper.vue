@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="swipper-box">
-      <swiper :options="swiperOption" ref="mySwiper">
+      <swiper ref="mySwiper" :options="swiperOption">
         <!-- slides -->
         <swiper-slide v-for="item in swipperList" :key="item.id">
-          <img class="swipper-img" :src="item.imgUrl" alt="">
+          <img :src="item.imgUrl" alt="" class="swipper-img">
         </swiper-slide>
         <!-- Optional controls -->
-        <div class="swiper-pagination" slot="pagination"></div>
+        <div slot="pagination" class="swiper-pagination"></div>
       </swiper>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
         },
         // 启用轮播循环
         loop: true
-      },
+      }
       // swiperList: [
       //   {
       //     'id': '001',
@@ -43,21 +43,25 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
-  .swipper-box{
-    height: 0;
-    padding-bottom: 40%;
-    overflow: hidden;
-  }
-  .swipper-img{
-    width: 100%;
-  }
-  .swiper-pagination{
-    text-align: right;
-  }
-  .swipper-box >>> .swiper-pagination-bullet
-    background #FFFFFF
-    opacity 1
-  .swipper-box >>> .swiper-pagination-bullet-active
-    background #df2127
+<style lang="stylus" scoped>
+.swipper-box {
+  height: 0;
+  padding-bottom: 40%;
+  overflow: hidden;
+}
+
+.swipper-img {
+  width: 100%;
+}
+
+.swiper-pagination {
+  text-align: right;
+}
+
+.swipper-box >>> .swiper-pagination-bullet
+  background #FFFFFF
+  opacity 1
+
+.swipper-box >>> .swiper-pagination-bullet-active
+  background #df2127
 </style>

@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-  body{
-    background-color: #FFFFFF !important;
-  }
+body {
+  background-color: #FFFFFF !important;
+}
 </style>

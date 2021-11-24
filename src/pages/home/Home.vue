@@ -3,7 +3,7 @@
     <home-header></home-header>
     <home-swipper :swipperList="swipperList"></home-swipper>
     <home-footer></home-footer>
-    <HomeIcons></HomeIcons>
+    <HomeIcons :iconList="iconList"></HomeIcons>
     <home-goods></home-goods>
   </div>
 </template>
@@ -15,6 +15,7 @@ import HomeSwipper from './components/HomeSwipper'
 import HomeIcons from './components/HomeIcons'
 import HomeGoods from './components/HomeGoods'
 import axios from 'axios'
+
 export default {
   name: 'Home',
   components: {
@@ -25,9 +26,10 @@ export default {
     HomeGoods
   },
   data () {
-      return {
-        swipperList: []
-      }
+    return {
+      swipperList: [],
+      iconList: []
+    }
   },
   methods: {
     // 配置get方法，在页面加载时发起get请求，获取到index.json
@@ -38,9 +40,11 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         var data = res.data
+        this.iconList = data.iconList
         this.swipperList = data.swipperList
+
       }
-    },
+    }
   },
   // 在生命周期中，配置挂载完成时的钩子函数，调用get方法获取数据
   mounted () {

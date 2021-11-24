@@ -7,6 +7,8 @@ import router from './router'
 import './mui/css/mui.min.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+import './assets/styles/iconfont/iconfont.css'
+
 // requite.styles
 import 'swiper/dist/css/swiper.css'
 
@@ -18,6 +20,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

@@ -1,8 +1,8 @@
 /*!
- * =====================================================
- * Mui v3.7.3 (http://dev.dcloud.net.cn/mui)
- * =====================================================
- */
+* =====================================================
+* Mui v3.7.3 (http://dev.dcloud.net.cn/mui)
+* =====================================================
+*/
 /**
  * MUI核心JS
  * @type _L4.$|Function
@@ -17,7 +17,9 @@ var mui = (function (document, undefined) {
 
   var $ = function (selector, context) {
     context = context || document
-    if (!selector) { return wrap() }
+    if (!selector) {
+      return wrap()
+    }
     if (typeof selector === 'object') {
       if ($.isArrayLike(selector)) {
         return wrap($.slice.call(selector), null)
@@ -25,7 +27,9 @@ var mui = (function (document, undefined) {
         return wrap([selector], null)
       }
     }
-    if (typeof selector === 'function') { return $.ready(selector) }
+    if (typeof selector === 'function') {
+      return $.ready(selector)
+    }
     if (typeof selector === 'string') {
       try {
         selector = selector.trim()
@@ -34,7 +38,8 @@ var mui = (function (document, undefined) {
           return wrap(found ? [found] : [])
         }
         return wrap($.qsa(selector, context), selector)
-      } catch (e) {}
+      } catch (e) {
+      }
     }
     return wrap()
   }
@@ -50,12 +55,12 @@ var mui = (function (document, undefined) {
 
   $.data = {}
   /**
-	 * extend(simple)
-	 * @param {type} target
-	 * @param {type} source
-	 * @param {type} deep
-	 * @returns {unresolved}
-	 */
+   * extend(simple)
+   * @param {type} target
+   * @param {type} source
+   * @param {type} deep
+   * @returns {unresolved}
+   */
   $.extend = function () { // from jquery2
     var options, name, src, copy, copyIsArray, clone,
       target = arguments[0] || {},
@@ -108,32 +113,33 @@ var mui = (function (document, undefined) {
     return target
   }
   /**
-	 * mui noop(function)
-	 */
-  $.noop = function () {}
+   * mui noop(function)
+   */
+  $.noop = function () {
+  }
   /**
-	 * mui slice(array)
-	 */
+   * mui slice(array)
+   */
   $.slice = [].slice
   /**
-	 * mui filter(array)
-	 */
+   * mui filter(array)
+   */
   $.filter = [].filter
 
   $.type = function (obj) {
     return obj == null ? String(obj) : class2type[{}.toString.call(obj)] || 'object'
   }
   /**
-	 * mui isArray
-	 */
+   * mui isArray
+   */
   $.isArray = Array.isArray ||
-		function (object) {
-		  return object instanceof Array
-		}
+    function (object) {
+      return object instanceof Array
+    }
   /**
-	 * mui isArrayLike
-	 * @param {Object} obj
-	 */
+   * mui isArrayLike
+   * @param {Object} obj
+   */
   $.isArrayLike = function (obj) {
     var length = !!obj && 'length' in obj && obj.length
     var type = $.type(obj)
@@ -141,30 +147,30 @@ var mui = (function (document, undefined) {
       return false
     }
     return type === 'array' || length === 0 ||
-			typeof length === 'number' && length > 0 && (length - 1) in obj
+      typeof length === 'number' && length > 0 && (length - 1) in obj
   }
   /**
-	 * mui isWindow(需考虑obj为undefined的情况)
-	 */
+   * mui isWindow(需考虑obj为undefined的情况)
+   */
   $.isWindow = function (obj) {
     return obj != null && obj === obj.window
   }
   /**
-	 * mui isObject
-	 */
+   * mui isObject
+   */
   $.isObject = function (obj) {
     return $.type(obj) === 'object'
   }
   /**
-	 * mui isPlainObject
-	 */
+   * mui isPlainObject
+   */
   $.isPlainObject = function (obj) {
     return $.isObject(obj) && !$.isWindow(obj) && Object.getPrototypeOf(obj) === Object.prototype
   }
   /**
-	 * mui isEmptyObject
-	 * @param {Object} o
-	 */
+   * mui isEmptyObject
+   * @param {Object} o
+   */
   $.isEmptyObject = function (o) {
     for (var p in o) {
       if (p !== undefined) {
@@ -174,26 +180,26 @@ var mui = (function (document, undefined) {
     return true
   }
   /**
-	 * mui isFunction
-	 */
+   * mui isFunction
+   */
   $.isFunction = function (value) {
     return $.type(value) === 'function'
   }
   /**
-	 * mui querySelectorAll
-	 * @param {type} selector
-	 * @param {type} context
-	 * @returns {Array}
-	 */
+   * mui querySelectorAll
+   * @param {type} selector
+   * @param {type} context
+   * @returns {Array}
+   */
   $.qsa = function (selector, context) {
     context = context || document
     return $.slice.call(classSelectorRE.test(selector) ? context.getElementsByClassName(RegExp.$1) : tagSelectorRE.test(selector) ? context.getElementsByTagName(selector) : context.querySelectorAll(selector))
   }
   /**
-	 * ready(DOMContentLoaded)
-	 * @param {type} callback
-	 * @returns {_L6.$}
-	 */
+   * ready(DOMContentLoaded)
+   * @param {type} callback
+   * @returns {_L6.$}
+   */
   $.ready = function (callback) {
     if (readyRE.test(document.readyState)) {
       callback($)
@@ -205,14 +211,14 @@ var mui = (function (document, undefined) {
     return this
   }
   /**
-	 * 将 fn 缓存一段时间后, 再被调用执行
-	 * 此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 resize , scroll , mousemove 等连续性事件中;
-	 * 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
-	 * 调用返回函数的 stop 停止最后一次的 buffer 效果
-	 * @param {Object} fn
-	 * @param {Object} ms
-	 * @param {Object} context
-	 */
+   * 将 fn 缓存一段时间后, 再被调用执行
+   * 此方法为了避免在 ms 段时间内, 执行 fn 多次. 常用于 resize , scroll , mousemove 等连续性事件中;
+   * 当 ms 设置为 -1, 表示立即执行 fn, 即和直接调用 fn 一样;
+   * 调用返回函数的 stop 停止最后一次的 buffer 效果
+   * @param {Object} fn
+   * @param {Object} ms
+   * @param {Object} context
+   */
   $.buffer = function (fn, ms, context) {
     var timer
     var lastStart = 0
@@ -232,8 +238,8 @@ var mui = (function (document, undefined) {
     return $.extend(function () {
       if (
         (!lastStart) || // 从未运行过
-				(lastEnd >= lastStart && $.now() - lastEnd > ms) || // 上次运行成功后已经超过ms毫秒
-				(lastEnd < lastStart && $.now() - lastStart > ms * 8) // 上次运行或未完成，后8*ms毫秒
+        (lastEnd >= lastStart && $.now() - lastEnd > ms) || // 上次运行成功后已经超过ms毫秒
+        (lastEnd < lastStart && $.now() - lastStart > ms * 8) // 上次运行或未完成，后8*ms毫秒
       ) {
         run.apply(this, arguments)
       } else {
@@ -252,11 +258,11 @@ var mui = (function (document, undefined) {
     })
   }
   /**
-	 * each
-	 * @param {type} elements
-	 * @param {type} callback
-	 * @returns {_L8.$}
-	 */
+   * each
+   * @param {type} elements
+   * @param {type} callback
+   * @returns {_L8.$}
+   */
   $.each = function (elements, callback, hasOwnProperty) {
     if (!elements) {
       return this
@@ -288,12 +294,12 @@ var mui = (function (document, undefined) {
     }
   }
   /**
-	 * trigger event
-	 * @param {type} element
-	 * @param {type} eventType
-	 * @param {type} eventData
-	 * @returns {_L8.$}
-	 */
+   * trigger event
+   * @param {type} element
+   * @param {type} eventType
+   * @param {type} eventData
+   * @returns {_L8.$}
+   */
   $.trigger = function (element, eventType, eventData) {
     element.dispatchEvent(new CustomEvent(eventType, {
       detail: eventData,
@@ -303,11 +309,11 @@ var mui = (function (document, undefined) {
     return this
   }
   /**
-	 * getStyles
-	 * @param {type} element
-	 * @param {type} property
-	 * @returns {styles}
-	 */
+   * getStyles
+   * @param {type} element
+   * @param {type} property
+   * @returns {styles}
+   */
   $.getStyles = function (element, property) {
     var styles = element.ownerDocument.defaultView.getComputedStyle(element, null)
     if (property) {
@@ -316,11 +322,11 @@ var mui = (function (document, undefined) {
     return styles
   }
   /**
-	 * parseTranslate
-	 * @param {type} translateString
-	 * @param {type} position
-	 * @returns {Object}
-	 */
+   * parseTranslate
+   * @param {type} translateString
+   * @param {type} position
+   * @returns {Object}
+   */
   $.parseTranslate = function (translateString, position) {
     var result = translateString.match(translateRE || '')
     if (!result || !result[1]) {
@@ -338,17 +344,19 @@ var mui = (function (document, undefined) {
     return result
   }
   /**
-	 * parseTranslateMatrix
-	 * @param {type} translateString
-	 * @param {type} position
-	 * @returns {Object}
-	 */
+   * parseTranslateMatrix
+   * @param {type} translateString
+   * @param {type} position
+   * @returns {Object}
+   */
   $.parseTranslateMatrix = function (translateString, position) {
     var matrix = translateString.match(translateMatrixRE)
     var is3D = matrix && matrix[1]
     if (matrix) {
       matrix = matrix[2].split(',')
-      if (is3D === '3d') { matrix = matrix.slice(12, 15) } else {
+      if (is3D === '3d') {
+        matrix = matrix.slice(12, 15)
+      } else {
         matrix.push(0)
         matrix = matrix.slice(4, 7)
       }
@@ -389,12 +397,12 @@ var mui = (function (document, undefined) {
     }
   }
   /**
-	 * setTimeout封装
-	 * @param {Object} fn
-	 * @param {Object} when
-	 * @param {Object} context
-	 * @param {Object} data
-	 */
+   * setTimeout封装
+   * @param {Object} fn
+   * @param {Object} when
+   * @param {Object} context
+   * @param {Object} data
+   */
   $.later = function (fn, when, context, data) {
     when = when || 0
     var m = fn
@@ -430,8 +438,8 @@ var mui = (function (document, undefined) {
     $.parseJSON = JSON.parse
   }
   /**
-	 * $.fn
-	 */
+   * $.fn
+   */
   $.fn = {
     each: function (callback) {
       [].every.call(this, function (el, idx) {
@@ -442,8 +450,8 @@ var mui = (function (document, undefined) {
   }
 
   /**
-	 * 兼容 AMD 模块
-	 **/
+   * 兼容 AMD 模块
+   **/
   if (typeof define === 'function' && define.amd) {
     define('mui', [], function () {
       return $
@@ -502,6 +510,7 @@ var mui = (function (document, undefined) {
       return !func.call($)
     })
   }
+
   detect.call($, navigator.userAgent)
 })(mui, window);
 /**
@@ -526,6 +535,7 @@ var mui = (function (document, undefined) {
       }
     }
   }
+
   detect.call($, navigator.userAgent)
 })(mui, document);
 /**
@@ -660,12 +670,12 @@ var mui = (function (document, undefined) {
   }
   var preventDefaultException = /^(INPUT|TEXTAREA|BUTTON|SELECT)$/
   /**
-	 * mui delegate events
-	 * @param {type} event
-	 * @param {type} selector
-	 * @param {type} callback
-	 * @returns {undefined}
-	 */
+   * mui delegate events
+   * @param {type} event
+   * @param {type} selector
+   * @param {type} callback
+   * @returns {undefined}
+   */
   $.fn.on = function (event, selector, callback) { // 仅支持简单的事件委托,主要是tap事件使用，类似mouse,focus之类暂不封装支持
     return this.each(function () {
       var element = this
@@ -751,18 +761,18 @@ var mui = (function (document, undefined) {
  */
 (function ($, window, document) {
   /**
-	 * targets
-	 */
+   * targets
+   */
   $.targets = {}
   /**
-	 * target handles
-	 */
+   * target handles
+   */
   $.targetHandles = []
   /**
-	 * register target
-	 * @param {type} target
-	 * @returns {$.targets}
-	 */
+   * register target
+   * @param {type} target
+   * @returns {$.targets}
+   */
   $.registerTarget = function (target) {
     target.index = target.index || 1000
 
@@ -791,7 +801,9 @@ var mui = (function (document, undefined) {
           }
         } else {
           if (!founds[name]) {
-            if (targetHandle.isReset !== false) { $.targets[name] = false }
+            if (targetHandle.isReset !== false) {
+              $.targets[name] = false
+            }
           }
         }
       })
@@ -862,13 +874,13 @@ var mui = (function (document, undefined) {
   }
 })()
 /*
-	A shim for non ES5 supporting browsers.
-	Adds function bind to Function prototype, so that you can do partial application.
-	Works even with the nasty thing, where the first word is the opposite of extranet, the second one is the profession of Columbus, and the version number is 9, flipped 180 degrees.
+A shim for non ES5 supporting browsers.
+Adds function bind to Function prototype, so that you can do partial application.
+Works even with the nasty thing, where the first word is the opposite of extranet, the second one is the profession of Columbus, and the version number is 9, flipped 180 degrees.
 */
 
 Function.prototype.bind = Function.prototype.bind || function (to) {
-  // Make an array of our arguments, starting from second argument
+// Make an array of our arguments, starting from second argument
   var partial = Array.prototype.splice.call(arguments, 1),
     // We'll need the original function.
     fn = this
@@ -897,6 +909,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     Object.defineProperty(HTMLElement.prototype, 'classList', {
       get: function () {
         var self = this
+
         function update (fn) {
           return function (value) {
             var classes = self.className.split(/\s+/),
@@ -957,7 +970,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     window.cancelAnimationFrame = window.webkitCancelAnimationFrame || window.webkitCancelRequestAnimationFrame || function (id) {
       clearTimeout(id)
     }
-  };
+  }
+  ;
 }(window));
 /**
  * fastclick(only for radio,checkbox)
@@ -1093,27 +1107,27 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   $.classNamePrefix = $.namespace + '-'
   $.classSelectorPrefix = '.' + $.classNamePrefix
   /**
-	 * 返回正确的className
-	 * @param {type} className
-	 * @returns {String}
-	 */
+   * 返回正确的className
+   * @param {type} className
+   * @returns {String}
+   */
   $.className = function (className) {
     return $.classNamePrefix + className
   }
   /**
-	 * 返回正确的classSelector
-	 * @param {type} classSelector
-	 * @returns {String}
-	 */
+   * 返回正确的classSelector
+   * @param {type} classSelector
+   * @returns {String}
+   */
   $.classSelector = function (classSelector) {
     return classSelector.replace(/\./g, $.classSelectorPrefix)
   }
   /**
-         * 返回正确的eventName
-         * @param {type} event
-         * @param {type} module
-         * @returns {String}
-         */
+   * 返回正确的eventName
+   * @param {type} event
+   * @param {type} module
+   * @returns {String}
+   */
   $.eventName = function (event, module) {
     return event + ($.namespace ? ('.' + $.namespace) : '') + (module ? ('.' + module) : '')
   }
@@ -1130,27 +1144,27 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     session: {}
   }
   /**
-	 * Gesture preventDefault
-	 * @param {type} e
-	 * @returns {undefined}
-	 */
+   * Gesture preventDefault
+   * @param {type} e
+   * @returns {undefined}
+   */
   $.preventDefault = function (e) {
     e.preventDefault()
   }
   /**
-	 * Gesture stopPropagation
-	 * @param {type} e
-	 * @returns {undefined}
-	 */
+   * Gesture stopPropagation
+   * @param {type} e
+   * @returns {undefined}
+   */
   $.stopPropagation = function (e) {
     e.stopPropagation()
   }
 
   /**
-	 * register gesture
-	 * @param {type} gesture
-	 * @returns {$.gestures}
-	 */
+   * register gesture
+   * @param {type} gesture
+   * @returns {$.gestures}
+   */
   $.addGesture = function (gesture) {
     return $.addAction('gestures', gesture)
   }
@@ -1161,11 +1175,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   var atan = Math.atan
   var atan2 = Math.atan2
   /**
-	 * distance
-	 * @param {type} p1
-	 * @param {type} p2
-	 * @returns {Number}
-	 */
+   * distance
+   * @param {type} p1
+   * @param {type} p2
+   * @returns {Number}
+   */
   var getDistance = function (p1, p2, props) {
     if (!props) {
       props = ['x', 'y']
@@ -1175,10 +1189,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return sqrt((x * x) + (y * y))
   }
   /**
-	 * scale
-	 * @param {Object} starts
-	 * @param {Object} moves
-	 */
+   * scale
+   * @param {Object} starts
+   * @param {Object} moves
+   */
   var getScale = function (starts, moves) {
     if (starts.length >= 2 && moves.length >= 2) {
       var props = ['pageX', 'pageY']
@@ -1187,11 +1201,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return 1
   }
   /**
-	 * angle
-	 * @param {type} p1
-	 * @param {type} p2
-	 * @returns {Number}
-	 */
+   * angle
+   * @param {type} p1
+   * @param {type} p2
+   * @returns {Number}
+   */
   var getAngle = function (p1, p2, props) {
     if (!props) {
       props = ['x', 'y']
@@ -1201,10 +1215,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return atan2(y, x) * 180 / Math.PI
   }
   /**
-	 * direction
-	 * @param {Object} x
-	 * @param {Object} y
-	 */
+   * direction
+   * @param {Object} x
+   * @param {Object} y
+   */
   var getDirection = function (x, y) {
     if (x === y) {
       return ''
@@ -1215,20 +1229,20 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return y > 0 ? 'up' : 'down'
   }
   /**
-	 * rotation
-	 * @param {Object} start
-	 * @param {Object} end
-	 */
+   * rotation
+   * @param {Object} start
+   * @param {Object} end
+   */
   var getRotation = function (start, end) {
     var props = ['pageX', 'pageY']
     return getAngle(end[1], end[0], props) - getAngle(start[1], start[0], props)
   }
   /**
-	 * px per ms
-	 * @param {Object} deltaTime
-	 * @param {Object} x
-	 * @param {Object} y
-	 */
+   * px per ms
+   * @param {Object} deltaTime
+   * @param {Object} x
+   * @param {Object} y
+   */
   var getVelocity = function (deltaTime, x, y) {
     return {
       x: x / deltaTime || 0,
@@ -1236,11 +1250,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * detect gestures
-	 * @param {type} event
-	 * @param {type} touch
-	 * @returns {undefined}
-	 */
+   * detect gestures
+   * @param {type} event
+   * @param {type} touch
+   * @returns {undefined}
+   */
   var detect = function (event, touch) {
     if ($.gestures.stoped) {
       return
@@ -1254,10 +1268,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     })
   }
   /**
-	 * 暂时无用
-	 * @param {Object} node
-	 * @param {Object} parent
-	 */
+   * 暂时无用
+   * @param {Object} node
+   * @param {Object} parent
+   */
   var hasParent = function (node, parent) {
     while (node) {
       if (node == parent) {
@@ -1589,8 +1603,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture flick
-	 */
+   * mui gesture flick
+   */
   $.addGesture({
     name: name,
     index: 5,
@@ -1622,8 +1636,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture swipe
-	 */
+   * mui gesture swipe
+   */
   $.addGesture({
     name: name,
     index: 10,
@@ -1677,8 +1691,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture drag
-	 */
+   * mui gesture drag
+   */
   $.addGesture({
     name: name,
     index: 20,
@@ -1726,8 +1740,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture tap
-	 */
+   * mui gesture tap
+   */
   $.addGesture({
     name: name,
     index: 30,
@@ -1770,8 +1784,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture longtap
-	 */
+   * mui gesture longtap
+   */
   $.addGesture({
     name: name,
     index: 10,
@@ -1816,8 +1830,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture hold
-	 */
+   * mui gesture hold
+   */
   $.addGesture({
     name: name,
     index: 10,
@@ -1878,8 +1892,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * mui gesture pinch
-	 */
+   * mui gesture pinch
+   */
   $.addGesture({
     name: name,
     index: 10,
@@ -1908,10 +1922,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 *
-	 * @param {type} options
-	 * @returns {undefined}
-	 */
+   *
+   * @param {type} options
+   * @returns {undefined}
+   */
   $.initGlobal = function (options) {
     $.options = $.extend(true, $.global, options)
     return this
@@ -1919,9 +1933,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   var inits = {}
 
   /**
-	 * 单页配置 初始化
-	 * @param {object} options
-	 */
+   * 单页配置 初始化
+   * @param {object} options
+   */
   $.init = function (options) {
     $.options = $.extend(true, $.global, options || {})
     $.ready(function () {
@@ -1937,15 +1951,15 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   /**
-	 * 增加初始化执行流程
-	 * @param {function} init
-	 */
+   * 增加初始化执行流程
+   * @param {function} init
+   */
   $.addInit = function (init) {
     return $.addAction('inits', init)
   }
   /**
-	 * 处理html5版本subpages
-	 */
+   * 处理html5版本subpages
+   */
   $.addInit({
     name: 'iframe',
     index: 100,
@@ -2110,10 +2124,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   $.extend(true, $.global, defaultOptions)
   $.extend(true, $.options, defaultOptions)
   /**
-	 * 等待动画配置
-	 * @param {type} options
-	 * @returns {Object}
-	 */
+   * 等待动画配置
+   * @param {type} options
+   * @returns {Object}
+   */
   $.waitingOptions = function (options) {
     return $.extend(true, {}, {
       autoShow: true,
@@ -2122,18 +2136,18 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }, options)
   }
   /**
-	 * 窗口显示配置
-	 * @param {type} options
-	 * @returns {Object}
-	 */
+   * 窗口显示配置
+   * @param {type} options
+   * @returns {Object}
+   */
   $.showOptions = function (options) {
     return $.extend(true, {}, defaultShow, options)
   }
   /**
-	 * 窗口默认配置
-	 * @param {type} options
-	 * @returns {Object}
-	 */
+   * 窗口默认配置
+   * @param {type} options
+   * @returns {Object}
+   */
   $.windowOptions = function (options) {
     return $.extend({
       scalable: false,
@@ -2141,10 +2155,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }, options)
   }
   /**
-	 * plusReady
-	 * @param {type} callback
-	 * @returns {_L6.$}
-	 */
+   * plusReady
+   * @param {type} callback
+   * @returns {_L6.$}
+   */
   $.plusReady = function (callback) {
     if (window.plus) {
       setTimeout(function () { // 解决callback与plusready事件的执行时机问题(典型案例:showWaiting,closeWaiting)
@@ -2158,12 +2172,12 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return this
   }
   /**
-	 * 5+ event(5+没提供之前我自己实现)
-	 * @param {type} webview
-	 * @param {type} eventType
-	 * @param {type} data
-	 * @returns {undefined}
-	 */
+   * 5+ event(5+没提供之前我自己实现)
+   * @param {type} webview
+   * @param {type} eventType
+   * @param {type} data
+   * @returns {undefined}
+   */
   $.fire = function (webview, eventType, data) {
     if (webview) {
       if (typeof data === 'undefined') {
@@ -2178,18 +2192,19 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * 5+ event(5+没提供之前我自己实现)
-	 * @param {type} eventType
-	 * @param {type} data
-	 * @returns {undefined}
-	 */
+   * 5+ event(5+没提供之前我自己实现)
+   * @param {type} eventType
+   * @param {type} data
+   * @returns {undefined}
+   */
   $.receive = function (eventType, data) {
     if (eventType) {
       try {
         if (data && typeof data === 'string') {
           data = JSON.parse(data)
         }
-      } catch (e) {}
+      } catch (e) {
+      }
       $.trigger(document, eventType, data)
     }
   }
@@ -2222,11 +2237,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * 打开新窗口
-	 * @param {string} url 要打开的页面地址
-	 * @param {string} id 指定页面ID
-	 * @param {object} options 可选:参数,等待,窗口,显示配置{params:{},waiting:{},styles:{},show:{}}
-	 */
+   * 打开新窗口
+   * @param {string} url 要打开的页面地址
+   * @param {string} id 指定页面ID
+   * @param {object} options 可选:参数,等待,窗口,显示配置{params:{},waiting:{},styles:{},show:{}}
+   */
   $.openWindow = function (url, id, options) {
     if (typeof url === 'object') {
       options = url
@@ -2310,7 +2325,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
             nWaiting.close()
           }
           // 显示页面
-          webview.show(nShow.aniShow, nShow.duration, function () {}, nShow.extras)
+          webview.show(nShow.aniShow, nShow.duration, function () {
+          }, nShow.extras)
           options.afterShowMethodName && webview.evalJS(options.afterShowMethodName + '(\'' + JSON.stringify(params) + '\')')
         }
         // titleUpdate触发时机早于loaded，更换为titleUpdate后，可以更早的显示webview
@@ -2468,7 +2484,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
             nWaiting.close()
           }
           // 显示页面
-          webview.show(nShow.aniShow, nShow.duration, function () {}, nShow.extras)
+          webview.show(nShow.aniShow, nShow.duration, function () {
+          }, nShow.extras)
         }, false)
       }
     }
@@ -2476,11 +2493,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   /**
-	 * 根据配置信息创建一个webview
-	 * @param {type} options
-	 * @param {type} isCreate
-	 * @returns {webview}
-	 */
+   * 根据配置信息创建一个webview
+   * @param {type} options
+   * @param {type} isCreate
+   * @returns {webview}
+   */
   $.createWindow = function (options, isCreate) {
     if (!window.plus) {
       return
@@ -2563,8 +2580,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   /**
-	 * 预加载
-	 */
+   * 预加载
+   */
   $.preload = function (options) {
     // 调用预加载函数，不管是否传递preload参数，强制变为true
     if (!options.preload) {
@@ -2574,8 +2591,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   /**
-	 *关闭当前webview打开的所有webview；
-	 */
+   *关闭当前webview打开的所有webview；
+   */
   $.closeOpened = function (webview) {
     var opened = webview.opened()
     if (opened) {
@@ -2606,10 +2623,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   /**
-	 * 批量创建webview
-	 * @param {type} options
-	 * @returns {undefined}
-	 */
+   * 批量创建webview
+   * @param {type} options
+   * @returns {undefined}
+   */
   $.createWindows = function (options) {
     $.each(options, function (index, option) {
       // 初始化预加载窗口(创建)和非预加载窗口(仅配置，不创建)
@@ -2617,10 +2634,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     })
   }
   /**
-	 * 创建当前页面的子webview
-	 * @param {type} options
-	 * @returns {webview}
-	 */
+   * 创建当前页面的子webview
+   * @param {type} options
+   * @returns {webview}
+   */
   $.appendWebview = function (options) {
     if (!window.plus) {
       return
@@ -2741,16 +2758,16 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
  */
 (function ($, window) {
   /**
-	 * register back
-	 * @param {type} back
-	 * @returns {$.gestures}
-	 */
+   * register back
+   * @param {type} back
+   * @returns {$.gestures}
+   */
   $.addBack = function (back) {
     return $.addAction('backs', back)
   }
   /**
-	 * default
-	 */
+   * default
+   */
   $.addBack({
     name: 'browser',
     index: 100,
@@ -2763,8 +2780,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   })
   /**
-	 * 后退
-	 */
+   * 后退
+   */
   $.back = function () {
     if (typeof $.options.beforeback === 'function') {
       if ($.options.beforeback() === false) {
@@ -2824,8 +2841,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   // 首次按下back按键的时间
   $.__back__first = null
   /**
-	 * 5+ back
-	 */
+   * 5+ back
+   */
   $.addBack({
     name: '5+',
     index: 10,
@@ -3160,7 +3177,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       setHeader('Content-Type', settings.contentType || 'application/x-www-form-urlencoded')
     }
     if (settings.headers) {
-      for (var name in settings.headers) { setHeader(name, settings.headers[name]) }
+      for (var name in settings.headers) {
+        setHeader(name, settings.headers[name])
+      }
     }
     xhr.setRequestHeader = setHeader
 
@@ -3259,13 +3278,17 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
 
   $.fn.load = function (url, data, success) {
-    if (!this.length) { return this }
+    if (!this.length) {
+      return this
+    }
     var self = this,
       parts = url.split(/\s/),
       selector,
       options = parseArguments(url, data, success),
       callback = options.success
-    if (parts.length > 1) { options.url = parts[0], selector = parts[1] }
+    if (parts.length > 1) {
+      options.url = parts[0], selector = parts[1]
+    }
     options.success = function (response) {
       if (selector) {
         var div = document.createElement('div')
@@ -3344,8 +3367,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
  */
 (function ($, window) {
   /**
-	 * scrollTo
-	 */
+   * scrollTo
+   */
   $.scrollTo = function (scrollTop, duration, callback) {
     duration = duration || 1000
     var scroll = function (duration) {
@@ -3383,7 +3406,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       xyz
     }) ? /\b_super\b/ : /.*/
 
-  var Class = function () {}
+  var Class = function () {
+  }
   Class.extend = function (prop) {
     var _super = this.prototype
     initializing = true
@@ -3391,7 +3415,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     initializing = false
     for (var name in prop) {
       prototype[name] = typeof prop[name] === 'function' &&
-				typeof _super[name] === 'function' && fnTest.test(prop[name])
+      typeof _super[name] === 'function' && fnTest.test(prop[name])
         ? (function (name, fn) {
           return function () {
             var tmp = this._super
@@ -3406,9 +3430,13 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
         })(name, prop[name])
         : prop[name]
     }
-    function Class () {
-      if (!initializing && this.init) { this.init.apply(this, arguments) }
+
+    function Class() {
+      if (!initializing && this.init) {
+        this.init.apply(this, arguments)
+      }
     }
+
     Class.prototype = prototype
     Class.prototype.constructor = Class
     Class.extend = arguments.callee
@@ -5453,7 +5481,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       options = options || {}
       if (typeof options === 'string') {
         options = $.parseJSON(options)
-      };
+      }
+      ;
       !options.webviewId && (options.webviewId = (plus.webview.currentWebview().id || plus.webview.currentWebview().getURL()))
       var pullRefreshApi = null
       var attrWebviewId = options.webviewId && options.webviewId.replace(/\//g, '_') // 替换所有"/"
@@ -6255,9 +6284,15 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
   }
   var setStyle = function (popover, display, top, left) {
     var style = popover.style
-    if (typeof display !== 'undefined') { style.display = display }
-    if (typeof top !== 'undefined') { style.top = top + 'px' }
-    if (typeof left !== 'undefined') { style.left = left + 'px' }
+    if (typeof display !== 'undefined') {
+      style.display = display
+    }
+    if (typeof top !== 'undefined') {
+      style.top = top + 'px'
+    }
+    if (typeof left !== 'undefined') {
+      style.left = left + 'px'
+    }
   }
   var calPosition = function (popover, anchor, isActionSheet) {
     if (!popover || !anchor) {
@@ -6996,10 +7031,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     element[method]('flick', handleEvent)
   };
   /**
-	 * 打开滑动菜单
-	 * @param {Object} el
-	 * @param {Object} direction
-	 */
+   * 打开滑动菜单
+   * @param {Object} el
+   * @param {Object} direction
+   */
   $.swipeoutOpen = function (el, direction) {
     if (!el) return
     var classList = el.classList
@@ -7036,9 +7071,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     setTranslate(el.querySelector(SELECTOR_SLIDER_HANDLE), translate)
   }
   /**
-	 * 关闭滑动菜单
-	 * @param {Object} el
-	 */
+   * 关闭滑动菜单
+   * @param {Object} el
+   */
   $.swipeoutClose = function (el) {
     if (!el) return
     var classList = el.classList
@@ -7174,8 +7209,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
 })(mui, window, document);
 (function ($, window) {
   /**
-	 * 警告消息框
-	 */
+   * 警告消息框
+   */
   $.alert = function (message, title, btnValue, callback) {
     if ($.os.plus) {
       if (typeof message === 'undefined') {
@@ -7201,8 +7236,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
 })(mui, window);
 (function ($, window) {
   /**
-	 * 确认消息框
-	 */
+   * 确认消息框
+   */
   $.confirm = function (message, title, btnArray, callback) {
     if ($.os.plus) {
       if (typeof message === 'undefined') {
@@ -7236,8 +7271,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
 })(mui, window);
 (function ($, window) {
   /**
-	 * 输入对话框
-	 */
+   * 输入对话框
+   */
   $.prompt = function (text, defaultText, title, btnArray, callback) {
     if ($.os.plus) {
       if (typeof message === 'undefined') {
@@ -7280,18 +7315,18 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
 (function ($, window) {
   var CLASS_ACTIVE = 'mui-active'
   /**
-	 * 自动消失提示框
-	 */
+   * 自动消失提示框
+   */
   $.toast = function (message, options) {
     var durations = {
-		    'long': 3500,
-		    'short': 2000
+      'long': 3500,
+      'short': 2000
     }
 
     // 计算显示时间
-		 options = $.extend({
-	        duration: 'short'
-	    }, options || {})
+    options = $.extend({
+      duration: 'short'
+    }, options || {})
 
     if ($.os.plus && options.type !== 'div') {
       // 默认显示在底部；
@@ -7303,13 +7338,13 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       })
     } else {
       if (typeof options.duration === 'number') {
-		        duration = options.duration > 0 ? options.duration : durations['short']
-		    } else {
-		        duration = durations[options.duration]
-		    }
-		    if (!duration) {
-		        duration = durations['short']
-		    }
+        duration = options.duration > 0 ? options.duration : durations['short']
+      } else {
+        duration = durations[options.duration]
+      }
+      if (!duration) {
+        duration = durations['short']
+      }
       var toast = document.createElement('div')
       toast.classList.add('mui-toast-container')
       toast.innerHTML = '<div class="' + 'mui-toast-message' + '">' + message + '</div>'
@@ -7321,9 +7356,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       })
       // 点击则自动消失
       toast.addEventListener('click', function () {
-		        toast.parentNode.removeChild(toast)
-		        toast = null
-		    })
+        toast.parentNode.removeChild(toast)
+        toast = null
+      })
       document.body.appendChild(toast)
       toast.offsetHeight
       toast.classList.add(CLASS_ACTIVE)
@@ -7332,8 +7367,10 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       }, duration)
 
       return {
-		        isVisible: function () { return !!toast }
-		    }
+        isVisible: function () {
+          return !!toast
+        }
+      }
     }
   }
 })(mui, window);
@@ -7573,11 +7610,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
   /**
-	 * 创建并显示进度条
-	 * @param {Object} container  可选，默认body，支持selector,DOM Node,mui wrapper
-	 * @param {Object} progress 可选，undefined表示循环，数字表示具体进度
-	 * @param {Object} color 可选，指定颜色样式(目前暂未提供实际样式，可暂时不暴露此参数)
-	 */
+   * 创建并显示进度条
+   * @param {Object} container  可选，默认body，支持selector,DOM Node,mui wrapper
+   * @param {Object} progress 可选，undefined表示循环，数字表示具体进度
+   * @param {Object} color 可选，指定颜色样式(目前暂未提供实际样式，可暂时不暴露此参数)
+   */
   var showProgressbar = function (container, progress, color) {
     if (typeof container === 'number') {
       color = progress
@@ -7616,9 +7653,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     return progressbar
   }
   /**
-	 * 关闭进度条
-	 * @param {Object} container 可选，默认body，支持selector,DOM Node,mui wrapper
-	 */
+   * 关闭进度条
+   * @param {Object} container 可选，默认body，支持selector,DOM Node,mui wrapper
+   */
   var hideProgressbar = function (container) {
     var progressbar = _findProgressbar(container)
     if (!progressbar) {
@@ -7636,11 +7673,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     })
   }
   /**
-	 * 设置指定进度条进度
-	 * @param {Object} container  可选，默认body，支持selector,DOM Node,mui wrapper
-	 * @param {Object} progress 可选，默认0 取值范围[0-100]
-	 * @param {Object} speed 进度条动画时间
-	 */
+   * 设置指定进度条进度
+   * @param {Object} container  可选，默认body，支持selector,DOM Node,mui wrapper
+   * @param {Object} progress 可选，默认0 取值范围[0-100]
+   * @param {Object} speed 进度条动画时间
+   */
   var setProgressbar = function (container, progress, speed) {
     if (typeof container === 'number') {
       speed = progress
@@ -7694,9 +7731,9 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     })
     return progressbarApis.length === 1 ? progressbarApis[0] : progressbarApis
   }
-  //	$.setProgressbar = setProgressbar;
-  //	$.showProgressbar = showProgressbar;
-  //	$.hideProgressbar = hideProgressbar;
+//	$.setProgressbar = setProgressbar;
+//	$.showProgressbar = showProgressbar;
+//	$.hideProgressbar = hideProgressbar;
 })(mui, document);
 /**
  * Input(TODO resize)
@@ -8099,8 +8136,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
 
   var Numbox = $.Numbox = $.Class.extend({
     /**
-         * 构造函数
-         **/
+     * 构造函数
+     **/
     init: function (holder, options) {
       var self = this
       if (!holder) {
@@ -8117,8 +8154,8 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       self.initEvent()
     },
     /**
-         * 初始化事件绑定
-         **/
+     * 初始化事件绑定
+     **/
     initEvent: function () {
       var self = this
       self.plus.addEventListener(tapEventName, function (event) {
@@ -8141,15 +8178,15 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       })
     },
     /**
-         * 获取当前值
-         **/
+     * 获取当前值
+     **/
     getValue: function () {
       var self = this
       return parseInt(self.input.value)
     },
     /**
-         * 验证当前值是法合法
-         **/
+     * 验证当前值是法合法
+     **/
     checkValue: function () {
       var self = this
       var val = self.input.value
@@ -8174,15 +8211,15 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       }
     },
     /**
-         * 更新选项
-         **/
+     * 更新选项
+     **/
     setOption: function (name, value) {
       var self = this
       self.options[name] = value
     },
     /**
-         * 动态设置新值
-         **/
+     * 动态设置新值
+     **/
     setValue: function (value) {
       this.input.value = value
       this.checkValue()

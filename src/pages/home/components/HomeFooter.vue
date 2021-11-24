@@ -23,6 +23,7 @@
 
 <script>
 import mui from './../../../mui/js/mui.min'
+
 mui('.mui-scroll-wrapper').scroll({
   deceleration: 0.0005
 })
@@ -32,11 +33,12 @@ export default {
 </script>
 
 <style scoped>
-  *{
-    touch-action: none;
-  }
-  .mui-bar-tab .mui-tab-item.mui-active{
-    color:#df2127;
-  }
+* {
+  touch-action: none;
+}
+
+.mui-bar-tab .mui-tab-item.mui-active {
+  color: #df2127;
+}
 
 </style>
