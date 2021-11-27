@@ -42,7 +42,6 @@ export default {
         var data = res.data
         this.iconList = data.iconList
         this.swipperList = data.swipperList
-
       }
     }
   },

@@ -32,11 +32,10 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-.swiper-box
+.swipper-box
   height 0
   overflow hidden
   padding-bottom 100%
-
   .swipper-img
     width 100%
 </style>
