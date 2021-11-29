@@ -23,7 +23,7 @@
 <script>
 export default {
   name: 'GoodsSwiper',
-  data() {
+  data () {
     return {
       swiperOption: {}
     }
@@ -36,6 +36,7 @@ export default {
   height 0
   overflow hidden
   padding-bottom 100%
+
   .swipper-img
     width 100%
 </style>

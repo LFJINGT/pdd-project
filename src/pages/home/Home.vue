@@ -25,7 +25,7 @@ export default {
     HomeIcons,
     HomeGoods
   },
-  data () {
+  data() {
     return {
       swipperList: [],
       iconList: []
@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     // 配置get方法，在页面加载时发起get请求，获取到index.json
-    getHomeData () {
+    getHomeData() {
       axios.get('/static/data/index.json').then(this.getHomeDataSucc)
     },
-    getHomeDataSucc (res) {
+    getHomeDataSucc(res) {
       res = res.data
       if (res.ret && res.data) {
         var data = res.data
@@ -46,7 +46,7 @@ export default {
     }
   },
   // 在生命周期中，配置挂载完成时的钩子函数，调用get方法获取数据
-  mounted () {
+  mounted() {
     this.getHomeData()
   }
 }

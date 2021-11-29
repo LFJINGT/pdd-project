@@ -3,8 +3,7 @@
     <router-link class="goods-box" tag='div' to=''>
       <div class="left-img">
         <img
-          alt=""
-          class="goods-img"
+          alt="" class="goods-img"
           src="https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg">
       </div>
       <div class="right-content">
@@ -42,7 +41,6 @@ export default {
   height 0
   padding-bottom 45%
   overflow hidden
-
 
 //里面的左边商品的规格调整
 .left-img

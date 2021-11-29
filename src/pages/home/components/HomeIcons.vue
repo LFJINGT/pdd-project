@@ -128,7 +128,7 @@ export default {
     }
   },
   computed: {
-    pages () {
+    pages() {
       // 二维数组 -> pages[page1[0],page2[1]]
       // page1[0]类里面储存着iconList中的前十条数据
       // page2[1]类里面储存着iconList中的后十条数据

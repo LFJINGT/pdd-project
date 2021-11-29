@@ -225,7 +225,7 @@ var mui = (function (document, undefined) {
     var lastEnd = 0
     var ms = ms || 150
 
-    function run () {
+    function run() {
       if (timer) {
         timer.cancel()
         timer = 0
@@ -468,7 +468,7 @@ var mui = (function (document, undefined) {
  * @returns {undefined}
  */
 (function ($, window) {
-  function detect (ua) {
+  function detect(ua) {
     this.os = {}
     var funcs = [
 
@@ -519,7 +519,7 @@ var mui = (function (document, undefined) {
  * @returns {undefined}
  */
 (function ($, document) {
-  function detect (ua) {
+  function detect(ua) {
     this.os = this.os || {}
     var plus = ua.match(/Html5Plus/i) // TODO 5\+Browser?
     if (plus) {
@@ -855,7 +855,7 @@ var mui = (function (document, undefined) {
  */
 (function () {
   if (typeof window.CustomEvent === 'undefined') {
-    function CustomEvent (event, params) {
+    function CustomEvent(event, params) {
       params = params || {
         bubbles: false,
         cancelable: false,
@@ -910,7 +910,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       get: function () {
         var self = this
 
-        function update (fn) {
+        function update(fn) {
           return function (value) {
             var classes = self.className.split(/\s+/),
               index = classes.indexOf(value)
@@ -1300,7 +1300,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       if (!key) {
         results = results.sort()
       } else {
-        results = results.sort(function sortUniqueArray (a, b) {
+        results = results.sort(function sortUniqueArray(a, b) {
           return a[key] > b[key]
         })
       }
@@ -1529,11 +1529,11 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
       $.gestures.touch = $.gestures.session = {}
     }
   }
-  var supportsPassive = (function checkPassiveListener () {
+  var supportsPassive = (function checkPassiveListener() {
     var supportsPassive = false
     try {
       var opts = Object.defineProperty({}, 'passive', {
-        get: function get () {
+        get: function get() {
           supportsPassive = true
         }
       })
@@ -1994,7 +1994,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     $.os.wechat && handleScroll(wrapper, iframe)
   }
 
-  function handleScroll (wrapper, iframe) {
+  function handleScroll(wrapper, iframe) {
     var key = 'MUI_SCROLL_POSITION_' + document.location.href + '_' + iframe.src
     var scrollTop = (parseFloat(localStorage.getItem(key)) || 0)
     if (scrollTop) {
@@ -7022,7 +7022,7 @@ Function.prototype.bind = Function.prototype.bind || function (to) {
     }
   }
 
-  function toggleEvents (element, isRemove) {
+  function toggleEvents(element, isRemove) {
     var method = isRemove ? 'removeEventListener' : 'addEventListener'
     element[method]('drag', handleEvent)
     element[method]('dragend', handleEvent)

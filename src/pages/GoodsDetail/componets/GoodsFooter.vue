@@ -39,9 +39,11 @@ export default {
   padding-bottom 15%
   overflow hidden
   background-color white
+
   .footer-box
     float left
     background-color white
+
     .more
       display inline-block
       margin-left .6rem
