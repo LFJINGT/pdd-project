@@ -141,6 +141,7 @@
 <script>
 export default {
   name: 'GoodMiddle'
+
 }
 </script>
 

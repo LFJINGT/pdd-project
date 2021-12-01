@@ -11,7 +11,6 @@ import GoodsFooter from './componets/GoodsFooter.vue'
 import GoodsSwiper from './componets/GoodsSwiper'
 import GoodMiddle from './componets/GoodMiddle'
 
-
 export default {
   name: 'GoodsDetail',
   components: {

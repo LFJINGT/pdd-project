@@ -112,6 +112,16 @@
         "imgUrl": "https://commimg.pddpic.com/oms_img_ng/2020-12-04/c1a20306-bdb3-42c5-b0bb-e4018ce9f4d6.png?imageView2/2/w/117/q/80",
         "content": "行家帮你选"
       }
+    ],
+    "GoodsList": [
+      {
+        "id": "0001",
+        "img-url": "https://img.pddpic.com/goods/images/2020-09-10/3c549723f8d00856b5dc08b0f40918d6.jpeg?imageView2/2/w/400/q/80/format/webp",
+        "price": "2499",
+        "pingdan-number": "4543",
+        "user-img-one": "https://avatar2.pddpic.com/a/Q1BZN2VaM3pnK09KTGg5RGVZUTNxZVFWM2NnT0JMS0NnQT09djA0-1636898089?imageMogr2/thumbnail/100x",
+        "user-img-two": "https://avatar2.pddpic.com/a/Q0tLaDQ3SjBkTC91WHhoMk15VGhhM29Ha0gyZGF2VHZLdz09djA0-1613042933?imageMogr2/thumbnail/100x"
+      }
     ]
   }
 }

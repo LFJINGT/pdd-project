@@ -4,7 +4,7 @@
     <home-swipper :swipperList="swipperList"></home-swipper>
     <home-footer></home-footer>
     <HomeIcons :iconList="iconList"></HomeIcons>
-    <home-goods></home-goods>
+    <home-goods :GoodsList="GoodsList"></home-goods>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
   data() {
     return {
       swipperList: [],
-      iconList: []
+      iconList: [],
+      GoodsList: []
     }
   },
   methods: {
@@ -42,6 +43,7 @@ export default {
         var data = res.data
         this.iconList = data.iconList
         this.swipperList = data.swipperList
+        this.GoodsList = data.GoodsList
       }
     }
   },
