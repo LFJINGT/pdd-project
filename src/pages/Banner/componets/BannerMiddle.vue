@@ -42,16 +42,17 @@ export default {
   padding-bottom 45%
   overflow hidden
 
-//里面的左边商品的规格调整
-.left-img
-  width 10rem
-  height 10rem
-  display inline-block
-  float left
+  //里面的左边商品的规格调整
 
-  .goods-img
+  .left-img
     width 10rem
     height 10rem
+    display inline-block
+    float left
+
+    .goods-img
+      width 10rem
+      height 10rem
 
   //里面右边文字描述区域的样式调整
 

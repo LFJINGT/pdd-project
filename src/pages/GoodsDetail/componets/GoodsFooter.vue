@@ -39,14 +39,18 @@ export default {
   padding-bottom 15%
   overflow hidden
   background-color white
+  width 100%
 
   .footer-box
     float left
     background-color white
 
+    div
+      margin-left 0.27rem
+
     .more
       display inline-block
-      margin-left .6rem
+      //margin-left .8rem
       font-size .7rem
       text-align center
       margin-top: .5rem
