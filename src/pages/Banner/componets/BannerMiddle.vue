@@ -1,24 +1,24 @@
 <template>
   <div class="banner-box">
-    <router-link class="goods-box" tag='div' to=''>
+    <router-link v-for="item in bannerList" :key="item.id" class="goods-box" tag='div' to=''>
       <div class="left-img">
         <img
           alt="" class="goods-img"
-          src="https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg">
+          :src="item.imgUrl">
       </div>
       <div class="right-content">
         <div class="goods-desc">
-          <span>山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发</span>
+          <span>{{ item.title }}</span>
         </div>
         <!--        进度条-->
         <div class="box">
           <span class="left"></span>
-          <span class="rate">12%</span>
+          <span class="rate">{{ item.rate }}</span>
         </div>
         <div class="click">马上抢</div>
         <!--        商品价格-->
         <div class="goods-price">
-          <span class="money">$10.8</span>
+          <span class="money">{{ item.price }}</span>
         </div>
       </div>
     </router-link>
@@ -27,7 +27,10 @@
 
 <script>
 export default {
-  name: 'BannerMiddle'
+  name: 'BannerMiddle',
+  props: {
+    bannerList: Array
+  }
 }
 </script>
 

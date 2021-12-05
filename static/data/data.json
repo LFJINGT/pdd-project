@@ -99,6 +99,85 @@
           "imgUrl": "https://img.pddpic.com/mms-material-img/2021-09-15/d2b9bacc-a103-4617-8274-b968c7f8b4b2.jpeg?imageView2/2/w/1300/q/80"
         }
       ]
-    }
+    },
+    "bannerList": [
+      {
+        "id": "0001",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0002",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0003",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0004",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0005",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0006",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0007",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0008",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0009",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0010",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      },
+      {
+        "id": "0011",
+        "title": "山西红富士苹果正宗脆甜冰糖丑苹果水果新鲜应季10/5斤整箱批发",
+        "imgUrl": "https://www.hping.cn/uploads/question/20201210/bip01kzltyj.jpg",
+        "rate": "12%",
+        "price": "$10.8"
+      }
+    ]
   }
 }

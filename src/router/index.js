@@ -4,6 +4,10 @@ import Home from '../pages/home/Home'
 import GoodsDetail from '../pages/GoodsDetail/GoodsDetail'
 import Banner from '../pages/Banner/Banner'
 
+import Category from "../pages/Category/Category";
+import CategroyContent from "../pages/Category/componets/CategroyContent";
+import CategoryFooter from "../pages/Category/componets/CategoryFooter";
+
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +26,21 @@ export default new Router({
       path: '/Banner',
       name: '/Banner',
       component: Banner
+    },
+    {
+      path: '/Category',
+      name: '/Category',
+      component: Category
+    },
+    {
+      path: '/Category/CategroyContent',
+      name: '/Category/CategroyContent',
+      component: CategroyContent
+    },
+    {
+      path: '/Category/CategoryFooter',
+      name: '/Category/CategoryFooter',
+      component: CategoryFooter
     }
   ]
 })
