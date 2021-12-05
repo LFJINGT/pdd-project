@@ -1,21 +1,14 @@
 # pdd-project
 
-> A Vue.js project
+这是一个基于Vue的项目
 
-## Build Setup
+## 如何使用
 
-``` bash
-# install dependencies
-npm install
+- 在你想要存放文件的目录下，进入终端，输入<br>
+  ``clone https://github.com/LFJINGT/pdd-project.git``
+  <br>
+- 终端中输入``cd pdd-project-master``进入目录
+  <br>
+- 输入``npm install``命令 安装依赖库
+- ``npm run dev``运行
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
