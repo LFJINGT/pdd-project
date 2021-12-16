@@ -1,0 +1,105 @@
+{
+  "ret": true,
+  "data": {
+    "GoodDetailsList": {
+      "id": "2",
+      "imgUrl": "https://img.pddpic.com/goods/images/2020-09-10/3c549723f8d00856b5dc08b0f40918d6.jpeg?imageView2/2/w/400/q/80/format/webp",
+      "price": 2499,
+      "name": "iQOO Neo3 iQOOpro 5g骁龙2号",
+      "yuanjia": 2599,
+      "pingdanNumber": "4543",
+      "user-img-one": "https://avatar2.pddpic.com/a/Q1BZN2VaM3pnK09KTGg5RGVZUTNxZVFWM2NnT0JMS0NnQT09djA0-1636898089?imageMogr2/thumbnail/100x",
+      "user-img-two": "https://avatar2.pddpic.com/a/Q0tLaDQ3SjBkTC91WHhoMk15VGhhM29Ha0gyZGF2VHZLdz09djA0-1613042933?imageMogr2/thumbnail/100x",
+      "tital": "【硬核5G新品】 iQOO Neo3 iQOOpro 5g骁龙2号",
+      "Introduction": "全场包邮 · 七天退换 · 48小时发货 · 假一赔十",
+      "tuihuo": "退货包运费",
+      "pingdanIng": "46",
+      "pingdanList": [
+        {
+          "userId": "0001",
+          "userName": "test",
+          "userImg": "https://avatar2.pddpic.com/a/Q0o1cCtHYUZBMzlmZDh4bDhwK1FKeXFteHhZT081QitpUT09djA0-1636492802?imageMogr2/thumbnail/100x"
+        },
+        {
+          "userId": "0002",
+          "userName": "黄哈哈",
+          "userImg": "https://avatar2.pddpic.com/a/Q0o1cCtHYUZBMzlmZDh4bDhwK1FKeXFteHhZT081QitpUT09djA0-1636492802?imageMogr2/thumbnail/100x"
+        }
+      ],
+      "commentNumber": "1870",
+      "commentList": [
+        {
+          "userId": "0001",
+          "userName": "不走寻常的路",
+          "userImg": "https://avatar2.pddpic.com/a/Q0JQVEZyd1pHcS9hZGQ5bWp2Ni9uVER3ZWFpNFQzMnJxdz09djA0-1634307287?imageMogr2/thumbnail/100x",
+          "comment": "比较粗糙不怎么样"
+        },
+        {
+          "userId": "0002",
+          "userName": "不走寻常的路",
+          "userImg": "https://avatar2.pddpic.com/a/Q0JQVEZyd1pHcS9hZGQ5bWp2Ni9uVER3ZWFpNFQzMnJxdz09djA0-1634307287?imageMogr2/thumbnail/100x",
+          "comment": "比较粗糙不怎么样"
+        }
+      ],
+      "photoShow": [
+        {
+          "id": "001",
+          "imgUrl": "https://review.pddpic.com/review3/review/2021-02-01/72f6d91e-d479-4f33-9537-015750a7a509.jpeg"
+        },
+        {
+          "id": "002",
+          "imgUrl": "https://review.pddpic.com/review3/review/2021-03-07/c51db5e6-dfdd-4d52-b227-f2a494f0dc10.jpeg"
+        },
+        {
+          "id": "003",
+          "imgUrl": "https://review.pddpic.com/review3/review/2021-04-22/efb665d7-c731-4492-bf0e-11a3c17d5730.jpeg"
+        },
+        {
+          "id": "004",
+          "imgUrl": "https://review.pddpic.com/review3/review/2020-08-18/5bfe3baf-d8be-4e8b-be04-9207f9f48306.jpeg"
+        }
+      ],
+      "photoShowNumber": "200",
+      "expertReviews": [
+        {
+          "userId": "00001",
+          "userName": "高兴",
+          "userImg": "https://avatar2.pddpic.com/a/Q0dHOGtSSWhKdzhEYlFzaUc5Mk50TU9NQmtIaW1wQ2tLUT09djA0-1634830853?imageMogr2/thumbnail/100x",
+          "comment": "猕猴桃收到包装很严实，没有破损！个头也都比较均匀，一共有16个，比超市便宜多了。",
+          "goodsImg1": "https://review.pddpic.com/review3/review/2021-11-12/3348cfde-8518-4737-83c8-cd9832ee2018.png?imageView2/2/w/1300/q/80",
+          "goodsImg2": "https://review.pddpic.com/review3/review/2021-11-12/25bcfdcf-63bf-4de7-a732-4af7f6fc3c24.jpeg?imageView2/2/w/1300/q/80",
+          "goodsImg3": "https://review.pddpic.com/review3/review/2021-11-12/bcc62db6-63a4-4ebc-8f25-a1edc6b6e5cb.jpeg?imageView2/2/w/1300/q/80"
+        }
+      ],
+      "merchantEvaluation": [
+        {
+          "id": "1",
+          "evaluation": "没有坏果(5.5万)",
+          "class": "good green"
+        },
+        {
+          "id": "2",
+          "evaluation": "猕猴桃很好吃(5万)",
+          "class": "good green"
+        },
+        {
+          "id": "3",
+          "evaluation": "个头挺大的(3.7万)",
+          "class": "good green"
+        }
+      ],
+      "storeName": "KANAVY水果生鲜官方旗舰店",
+      "storeImg": "https://img.pddpic.com/goods/images/2019-10-28/ee2fdc1d-e94e-44fb-9f57-ca0b031d454a_suffix.jpg?https://img.pddpic.com/goods/images/2019-10-28/ee2fdc1d-e94e-44fb-9f57-ca0b031d454a_suffix.jpg?imageView2/2/w/1300/q/80",
+      "exhibitionList": [
+        {
+          "id": "01",
+          "imgUrl": "https://img.pddpic.com/mms-material-img/2021-09-15/c187479d-06a2-418c-9078-58d698923c67.jpeg?imageView2/2/w/1300/q/80"
+        },
+        {
+          "id": "02",
+          "imgUrl": "https://img.pddpic.com/mms-material-img/2021-09-15/d2b9bacc-a103-4617-8274-b968c7f8b4b2.jpeg?imageView2/2/w/1300/q/80"
+        }
+      ]
+    }
+  }
+}

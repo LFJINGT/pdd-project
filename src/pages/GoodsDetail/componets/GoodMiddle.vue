@@ -83,7 +83,7 @@
     </div>
     <div class="pinglun">
       <div v-for="item in GoodDetailsList.merchantEvaluation" :key="item.id" class="good"
-           v-bind:class="{green:item.id == 1}">{{ item.evaluation }}
+           v-bind:class="{green:item.id === 1}">{{ item.evaluation }}
       </div>
     </div>
     <div class="dianpu">

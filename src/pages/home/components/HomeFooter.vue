@@ -9,7 +9,7 @@
         <span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
         <span class="mui-tab-label">分类</span>
       </router-link>
-      <router-link class="mui-tab-item" to="">
+      <router-link class="mui-tab-item" to="/ShopCart">
         <span class="mui-icon mui-icon-contact"></span>
         <span class="mui-tab-label">购物车</span>
       </router-link>

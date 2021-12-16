@@ -1,6 +1,7 @@
 <template>
   <div>
-    <router-link v-for="item in GoodsList" :key="item.id" class="goods-box" tag='div' to='/GoodsDetail'>
+    <router-link v-for="item in GoodsList" :key="item.id" :to="{name:'GoodsDetail',params:{id:item.id}}"
+                 class="goods-box" tag='div'>
       <div class="left-img">
         <img
           alt=""
@@ -9,7 +10,7 @@
       </div>
       <div class="right-content">
         <div class="goods-desc">
-          <span>【极速发货】垃圾袋家用加厚手提式背心黑色厨房中大号塑料袋批发</span>
+          <span>{{ item.desc }}</span>
         </div>
         <div class="goods-price">
           <span class="money">{{ item.price }}</span>
